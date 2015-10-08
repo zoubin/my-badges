@@ -26,11 +26,11 @@
   },
   "homepage": "https://github.com/zoubin/my-badges#readme",
   "dependencies": {
-    "minimist": "^1.2.0"
+    "minimist": "^1.2.0",
+    "util-mix": "^3.0.2"
   },
   "devDependencies": {
     "eslint": "^1.6.0",
-    "tap": "^2.1.0",
-    "util-mix": "^3.0.2"
+    "tap": "^2.1.0"
   }
 }
