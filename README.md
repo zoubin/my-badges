@@ -1,5 +1,6 @@
 # my-badges
 [![status](https://travis-ci.org/zoubin/my-badges.svg?branch=master)](https://travis-ci.org/zoubin/my-badges) [![version](https://img.shields.io/npm/v/my-badges.svg)](https://www.npmjs.org/package/my-badges) [![dependencies](https://david-dm.org/zoubin/my-badges.svg)](https://david-dm.org/zoubin/my-badges) [![devDependencies](https://david-dm.org/zoubin/my-badges/dev-status.svg)](https://david-dm.org/zoubin/my-badges#info=devDependencies)
+
 Generate useful badges
 
 ## Usage
