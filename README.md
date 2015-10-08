@@ -32,7 +32,6 @@ npm i my-badges -g
 [![status](https://travis-ci.org/zoubin/task-tape.svg?branch=master)](https://travis-ci.org/zoubin/task-tape)
 [![version](https://img.shields.io/npm/v/task-tape.svg)](https://www.npmjs.org/package/task-tape)
 [![npm](https://nodei.co/npm/task-tape.png)](https://www.npmjs.org/package/task-tape)
-[![node](https://img.shields.io/node/v/task-tape.svg)](https://www.npmjs.org/package/task-tape)
 
 ### Minor badges
 

@@ -13,7 +13,7 @@ var options = [
 ]
 
 var portfolio = {
-  major: ['status', 'dependencies', 'devDependencies', 'npm', 'version', 'node'],
+  major: ['status', 'dependencies', 'devDependencies', 'npm', 'version'],
   full: options,
   minor: ['status', 'version', 'npm'],
 }
