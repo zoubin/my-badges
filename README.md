@@ -1,8 +1,7 @@
-# my-badges
+# my-badges [![status](https://travis-ci.org/zoubin/my-badges.svg?branch=master)](https://travis-ci.org/zoubin/my-badges) [![version](https://img.shields.io/npm/v/my-badges.svg)](https://www.npmjs.org/package/my-badges)
 Generate useful badges
 
 ## Usage
-[![npm](https://nodei.co/npm/my-badges.png)](https://www.npmjs.org/package/my-badges)
 
 ```javascript
 npm i my-badges -g
