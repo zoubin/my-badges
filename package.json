@@ -1,0 +1,35 @@
+{
+  "name": "my-badges",
+  "version": "0.0.1",
+  "description": "Generate useful badges",
+  "main": "index.js",
+  "bin": {
+    "mybadges": "./bin/cmd.js"
+  },
+  "scripts": {
+    "test": "eslint . && tap test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zoubin/my-badges.git"
+  },
+  "keywords": [
+    "badge",
+    "github",
+    "npm",
+    "travis"
+  ],
+  "author": "zoubin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zoubin/my-badges/issues"
+  },
+  "homepage": "https://github.com/zoubin/my-badges#readme",
+  "dependencies": {
+    "minimist": "^1.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^1.6.0",
+    "tap": "^2.1.0"
+  }
+}
