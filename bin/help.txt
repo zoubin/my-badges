@@ -1,7 +1,8 @@
 
 mybadges [-dDsoplnvUR] [--major] [--full] [--minor] [package_name]
 
-  Create badges: 'dependencies', 'devDependencies', 'status', 'downloads', 'version', 'npm', 'license', 'node'
+  Create badges: 'dependencies', 'devDependencies', 'status', 'downloads', 'version', 'npm', 'license', 'node'.
+  Please run this command in the package directory, or provide enough information through the command line.
 
   -d, --dependencies
 
@@ -31,7 +32,7 @@ mybadges [-dDsoplnvUR] [--major] [--full] [--minor] [package_name]
     followed by github repo name. If not specified, it is the same with the package_name
   
   -h, --help
-    see the help text
+    show the help text
 
   --minor
     'status', 'npm', 'version'
@@ -41,4 +42,4 @@ mybadges [-dDsoplnvUR] [--major] [--full] [--minor] [package_name]
   
   --full
     'dependencies', 'devDependencies', 'status', 'downloads', 'version', 'npm', 'license', 'node'
-  
+

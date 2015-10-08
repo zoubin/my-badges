@@ -9,10 +9,12 @@ Generate useful badges
 npm i my-badges -g
 ```
 
+Suppose you are now under the repository `task-tape`.
+
 ### Full badges
 
 ```bash
-⌘ mybadges --full -U zoubin task-tape
+⌘ mybadges --full
 ```
 [![dependencies](https://david-dm.org/zoubin/task-tape.svg)](https://david-dm.org/zoubin/task-tape)
 [![devDependencies](https://david-dm.org/zoubin/task-tape/dev-status.svg)](https://david-dm.org/zoubin/task-tape#info=devDependencies)
@@ -26,7 +28,7 @@ npm i my-badges -g
 ### Major badges
 
 ```bash
-⌘ mybadges --major -U zoubin task-tape
+⌘ mybadges --major
 ```
 [![dependencies](https://david-dm.org/zoubin/task-tape.svg)](https://david-dm.org/zoubin/task-tape)
 [![devDependencies](https://david-dm.org/zoubin/task-tape/dev-status.svg)](https://david-dm.org/zoubin/task-tape#info=devDependencies)
@@ -37,7 +39,7 @@ npm i my-badges -g
 ### Minor badges
 
 ```bash
-⌘ mybadges --minor -U zoubin task-tape
+⌘ mybadges --minor
 ```
 
 [![status](https://travis-ci.org/zoubin/task-tape.svg?branch=master)](https://travis-ci.org/zoubin/task-tape)
@@ -50,7 +52,8 @@ npm i my-badges -g
 
 mybadges [-dDsoplnvUR] [--major] [--full] [--minor] [package_name]
 
-  Create badges: 'dependencies', 'devDependencies', 'status', 'downloads', 'version', 'npm', 'license', 'node'
+  Create badges: 'dependencies', 'devDependencies', 'status', 'downloads', 'version', 'npm', 'license', 'node'.
+  Please run this command in the package directory, or provide enough information through the command line.
 
   -d, --dependencies
 
@@ -80,7 +83,7 @@ mybadges [-dDsoplnvUR] [--major] [--full] [--minor] [package_name]
     followed by github repo name. If not specified, it is the same with the package_name
   
   -h, --help
-    see the help text
+    show the help text
 
   --minor
     'status', 'npm', 'version'

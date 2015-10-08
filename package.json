@@ -27,6 +27,7 @@
   "homepage": "https://github.com/zoubin/my-badges#readme",
   "dependencies": {
     "minimist": "^1.2.0",
+    "resolve": "^1.1.6",
     "util-mix": "^3.0.2"
   },
   "devDependencies": {

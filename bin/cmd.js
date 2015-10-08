@@ -3,6 +3,8 @@
 var minimist = require('minimist')
 var create = require('..')
 var fs = require('fs')
+var resolve = require('resolve')
+var path = require('path')
 
 var options = [
   'dependencies',
@@ -69,23 +71,45 @@ var argv = minimist(process.argv.slice(2), {
     repo: argv.repo,
   }
 
-  if (!info.name) {
-    info.name = info.repo
-  }
-
-  if (!info.repo) {
-    info.repo = info.name
-  }
-
-  options.forEach(function (opt) {
-    if (argv[opt]) {
-      var o = create(opt, info)
-      if (o) {
-        console.log(o.link)
-      } else {
-        console.warn('WARN:', opt, 'not supported yet')
-      }
+  resolve('./package.json', {
+    basedir: process.cwd(),
+    pathFilter: function () {
+      return 'package.json'
+    },
+  }, function (err, file, pkg) {
+    var url = pkg && pkg.repository && pkg.repository.url
+    if (url) {
+      var parts = url.split('/').slice(-2)
+      var len = parts.length
+      info.user = info.user || parts[0]
+      info.repo = info.repo || parts[1].slice(0, -4)
+      info.name = info.name || pkg.name
     }
+
+    if (!info.repo) {
+      info.repo = info.name
+    }
+
+    if (!info.name) {
+      info.name = info.repo
+    }
+
+    options.forEach(function (opt) {
+      if (argv[opt]) {
+        var o = create(opt, info)
+        if (o) {
+          console.log(o.link)
+        } else {
+          if (options.indexOf(opt) === -1) {
+            console.warn('WARN: `' + opt + '`not supported yet')
+          } else {
+            console.warn('Cannot create badge for `' + opt + '`')
+            console.warn('Please make sure you are running the command where package.json lies, or user name, repo name, package name are provided properly in the command line')
+          }
+        }
+      }
+    })
+
   })
 
 })()
