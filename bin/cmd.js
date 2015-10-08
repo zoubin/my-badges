@@ -4,7 +4,6 @@ var minimist = require('minimist')
 var create = require('..')
 var fs = require('fs')
 var resolve = require('resolve')
-var path = require('path')
 
 var options = [
   'dependencies',
@@ -80,7 +79,6 @@ var argv = minimist(process.argv.slice(2), {
     var url = pkg && pkg.repository && pkg.repository.url
     if (url) {
       var parts = url.split('/').slice(-2)
-      var len = parts.length
       info.user = info.user || parts[0]
       info.repo = info.repo || parts[1].slice(0, -4)
       info.name = info.name || pkg.name
@@ -98,15 +96,13 @@ var argv = minimist(process.argv.slice(2), {
       if (argv[opt]) {
         var o = create(opt, info)
         if (o) {
-          console.log(o.link)
-        } else {
-          if (options.indexOf(opt) === -1) {
-            console.warn('WARN: `' + opt + '`not supported yet')
-          } else {
-            console.warn('Cannot create badge for `' + opt + '`')
-            console.warn('Please make sure you are running the command where package.json lies, or user name, repo name, package name are provided properly in the command line')
-          }
+          return console.log(o.link)
         }
+        if (options.indexOf(opt) === -1) {
+          return console.warn('WARN: `' + opt + '`not supported yet')
+        }
+        console.warn('Cannot create badge for `' + opt + '`')
+        console.warn('Please make sure you are running the command where package.json lies, or user name, repo name, package name are provided properly in the command line')
       }
     })
 
