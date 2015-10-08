@@ -1,6 +1,6 @@
 {
   "name": "my-badges",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Generate useful badges",
   "main": "index.js",
   "bin": {
