@@ -45,7 +45,10 @@ npm i my-badges -g
 ## Command line options
 
 ```
+
 mybadges [-dDsoplnvUR] [--major] [--full] [--minor] [package_name]
+
+  Create badges: 'dependencies', 'devDependencies', 'status', 'downloads', 'version', 'npm', 'license', 'node'
 
   -d, --dependencies
 
@@ -74,6 +77,9 @@ mybadges [-dDsoplnvUR] [--major] [--full] [--minor] [package_name]
   -R, --repo
     followed by github repo name. If not specified, it is the same with the package_name
   
+  -h, --help
+    see the help text
+
   --minor
     'status', 'npm', 'version'
   
