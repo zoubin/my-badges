@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var minimist = require('minimist')
 var creator = require('../lib/creator')
 
