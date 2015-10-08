@@ -70,7 +70,7 @@ mybadges [-dDsoplnvUR][--major][--full][--minor] [package_name]
   'status', 'npm', 'version'
 
 --major
-  'status', 'dependencies', 'devDependencies', 'npm', 'version', 'node'
+  'status', 'dependencies', 'devDependencies', 'npm', 'version'
 
 --full
   'dependencies', 'devDependencies', 'status', 'downloads', 'version', 'npm', 'license', 'node'
