@@ -45,35 +45,97 @@ npm i my-badges -g
 ## Command line options
 
 ```
-mybadges [-dDsoplnvUR][--major][--full][--minor] [package_name]
+mybadges [-dDsoplnvUR] [--major] [--full] [--minor] [package_name]
 
--d, --dependencies
--D, --devDependencies
--s, --status
-  build status
--o, --downloads
-  downloads from npm per month
--p, --npm
-  link to npm
--l, --license
--n, --node
-  node version compatibility
--v, --version
-  npm package version
--U, --user
-  followed by github user name
--R, --repo
-  followed by github repo name. If not specified, it is the same with the package_name
+  -d, --dependencies
 
---minor
-  'status', 'npm', 'version'
+  -D, --devDependencies
 
---major
-  'status', 'dependencies', 'devDependencies', 'npm', 'version'
+  -s, --status
+    build status
 
---full
-  'dependencies', 'devDependencies', 'status', 'downloads', 'version', 'npm', 'license', 'node'
+  -o, --downloads
+    downloads from npm per month
+
+  -p, --npm
+    link to npm
+
+  -l, --license
+
+  -n, --node
+    node version compatibility
+
+  -v, --version
+    npm package version
+
+  -U, --user
+    followed by github user name
+
+  -R, --repo
+    followed by github repo name. If not specified, it is the same with the package_name
+  
+  --minor
+    'status', 'npm', 'version'
+  
+  --major
+    'status', 'dependencies', 'devDependencies', 'npm', 'version'
+  
+  --full
+    'dependencies', 'devDependencies', 'status', 'downloads', 'version', 'npm', 'license', 'node'
 
 ```
 
+## API
+
+```javascript
+var create = require('my-badges')
+
+```
+
+### rv = create(type, data, extra)
+
+#### type
+
+Type: `String`
+
+`mybadges -h` to see possible values.
+
+#### data
+
+Type: `Object`
+
+Data for creating badges.
+
+* `user`: github user name
+* `repo`: github repo name
+* `name`: package name
+
+#### extra
+
+Type: `Object`
+
+Custom templates.
+
+Take the build status badge for example:
+
+```javascript
+exports.status = {
+  test: hasUserinfo,
+  src: 'https://travis-ci.org/{{user}}/{{repo}}.svg?branch=master',
+  href: 'https://travis-ci.org/{{user}}/{{repo}}',
+  img: '![status]({{src}})',
+  link: '[{{img}}]({{href}})',
+}
+```
+
+You can override `img` or `link` by specifying them in `extra`.
+
+#### rv
+
+Type: `Object`
+
+* `src`: Image src
+* `href`: Link href
+* `img`: Image markdown
+* `link`: Link markdown
 

@@ -1,0 +1,41 @@
+
+mybadges [-dDsoplnvUR] [--major] [--full] [--minor] [package_name]
+
+  Create badges: 'dependencies', 'devDependencies', 'status', 'downloads', 'version', 'npm', 'license', 'node'
+
+  -d, --dependencies
+
+  -D, --devDependencies
+
+  -s, --status
+    build status
+
+  -o, --downloads
+    downloads from npm per month
+
+  -p, --npm
+    link to npm
+
+  -l, --license
+
+  -n, --node
+    node version compatibility
+
+  -v, --version
+    npm package version
+
+  -U, --user
+    followed by github user name
+
+  -R, --repo
+    followed by github repo name. If not specified, it is the same with the package_name
+  
+  --minor
+    'status', 'npm', 'version'
+  
+  --major
+    'status', 'dependencies', 'devDependencies', 'npm', 'version'
+  
+  --full
+    'dependencies', 'devDependencies', 'status', 'downloads', 'version', 'npm', 'license', 'node'
+  

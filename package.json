@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "eslint": "^1.6.0",
-    "tap": "^2.1.0"
+    "tap": "^2.1.0",
+    "util-mix": "^3.0.2"
   }
 }

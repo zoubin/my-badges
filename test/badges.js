@@ -1,5 +1,5 @@
 var test = require('tap').test
-var creator = require('../lib/creator')
+var create = require('..')
 
 test('badges', function(t) {
   var info = {
@@ -9,45 +9,53 @@ test('badges', function(t) {
   }
 
   t.equal(
-    creator.status(info),
+    create('status', info).link,
     '[![status](https://travis-ci.org/zoubin/task-tape.svg?branch=master)](https://travis-ci.org/zoubin/task-tape)',
     'status'
   )
+
   t.equal(
-    creator.dependencies(info),
+    create('dependencies', info).link,
     '[![dependencies](https://david-dm.org/zoubin/task-tape.svg)](https://david-dm.org/zoubin/task-tape)',
     'dependencies'
   )
+
   t.equal(
-    creator.devDependencies(info),
+    create('devDependencies', info).link,
     '[![devDependencies](https://david-dm.org/zoubin/task-tape/dev-status.svg)](https://david-dm.org/zoubin/task-tape#info=devDependencies)',
     'devDependencies'
   )
+
   t.equal(
-    creator.npm(info),
+    create('npm', info).link,
     '[![npm](https://nodei.co/npm/task-tape.png)](https://www.npmjs.org/package/task-tape)',
     'npm'
   )
+
   t.equal(
-    creator.downloads(info),
+    create('downloads', info).link,
     '[![downloads](https://img.shields.io/npm/dm/task-tape.svg)](https://www.npmjs.org/package/task-tape)',
     'downloads'
   )
+
   t.equal(
-    creator.version(info),
+    create('version', info).link,
     '[![version](https://img.shields.io/npm/v/task-tape.svg)](https://www.npmjs.org/package/task-tape)',
     'version'
   )
+
   t.equal(
-    creator.license(info),
+    create('license', info).link,
     '[![license](https://img.shields.io/npm/l/task-tape.svg)](https://www.npmjs.org/package/task-tape)',
     'license'
   )
+
   t.equal(
-    creator.node(info),
+    create('node', info).link,
     '[![node](https://img.shields.io/node/v/task-tape.svg)](https://www.npmjs.org/package/task-tape)',
     'node'
   )
+
   t.end()
 })
 
