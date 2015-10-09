@@ -28,7 +28,7 @@ test('badges', function(t) {
 
   t.equal(
     create('npm', info).link,
-    '[![npm](https://nodei.co/npm/task-tape.png)](https://www.npmjs.org/package/task-tape)',
+    '[![npm](https://nodei.co/npm/task-tape.png?downloads=true)](https://www.npmjs.org/package/task-tape)',
     'npm'
   )
 
