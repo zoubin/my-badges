@@ -6,25 +6,27 @@ var fs = require('fs')
 var resolve = require('resolve')
 
 var options = [
+  'npm',
+  'version',
+  'status',
+  'coverage',
   'dependencies',
   'devDependencies',
-  'status',
   'downloads',
-  'version',
-  'npm',
   'license',
   'node',
 ]
 
 var portfolio = {
-  major: ['status', 'dependencies', 'devDependencies', 'npm', 'version'],
+  major: ['npm', 'version', 'status', 'coverage', 'dependencies', 'devDependencies'],
   full: options,
-  minor: ['status', 'version', 'npm'],
+  minor: ['npm', 'version', 'status'],
 }
 var argv = minimist(process.argv.slice(2), {
   boolean: ['help'].concat(options, Object.keys(portfolio)),
   string: ['user', 'repo'],
   alias: {
+    c: 'coverage',
     d: 'dependencies',
     D: 'devDependencies',
     s: 'status',

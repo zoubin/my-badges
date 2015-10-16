@@ -4,6 +4,8 @@ mybadges [-dDsoplnvUR] [--major] [--full] [--minor] [package_name]
   Create badges: 'dependencies', 'devDependencies', 'status', 'downloads', 'version', 'npm', 'license', 'node'.
   Please run this command in the package directory, or provide enough information through the command line.
 
+  -c, --coverage
+
   -d, --dependencies
 
   -D, --devDependencies

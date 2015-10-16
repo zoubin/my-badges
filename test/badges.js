@@ -9,6 +9,12 @@ test('badges', function(t) {
   }
 
   t.equal(
+    create('coverage', info).link,
+    '[![coverage](https://img.shields.io/coveralls/zoubin/task-tape.svg)](https://coveralls.io/github/zoubin/task-tape)',
+    'coverage'
+  )
+
+  t.equal(
     create('status', info).link,
     '[![status](https://travis-ci.org/zoubin/task-tape.svg?branch=master)](https://travis-ci.org/zoubin/task-tape)',
     'status'

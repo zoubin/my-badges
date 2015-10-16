@@ -55,6 +55,8 @@ mybadges [-dDsoplnvUR] [--major] [--full] [--minor] [package_name]
   Create badges: 'dependencies', 'devDependencies', 'status', 'downloads', 'version', 'npm', 'license', 'node'.
   Please run this command in the package directory, or provide enough information through the command line.
 
+  -c, --coverage
+
   -d, --dependencies
 
   -D, --devDependencies
@@ -149,4 +151,25 @@ Type: `Object`
 * `href`: Link href
 * `img`: Image markdown
 * `link`: Link markdown
+
+## Before you run mybadges
+
+There are a few badges you have to do some configure to make them work.
+
+### Travis
+
+Sign in [travis](https://travis-ci.org/profile),
+activate your repo,
+and push a `.travis.yml`.
+
+* http://docs.travis-ci.com/user/getting-started/
+* http://docs.travis-ci.com/user/languages/javascript-with-nodejs/
+
+### Coverage
+
+Sign in [coveralls](https://coveralls.io/),
+activate your repo,
+and push a `.coveralls.yml`
+
+* https://coveralls.zendesk.com/hc/en-us
 
