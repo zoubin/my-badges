@@ -16,7 +16,7 @@ test('badges', function(t) {
 
   t.equal(
     create('status', info).link,
-    '[![status](https://travis-ci.org/zoubin/task-tape.svg?branch=master)](https://travis-ci.org/zoubin/task-tape)',
+    '[![status](https://travis-ci.org/zoubin/task-tape.svg)](https://travis-ci.org/zoubin/task-tape)',
     'status'
   )
 
@@ -40,7 +40,7 @@ test('badges', function(t) {
 
   t.equal(
     create('downloads', info).link,
-    '[![downloads](https://img.shields.io/npm/dm/task-tape.svg)](https://www.npmjs.org/package/task-tape)',
+    '![downloads](https://img.shields.io/npm/dm/task-tape.svg)',
     'downloads'
   )
 
@@ -52,13 +52,13 @@ test('badges', function(t) {
 
   t.equal(
     create('license', info).link,
-    '[![license](https://img.shields.io/npm/l/task-tape.svg)](https://www.npmjs.org/package/task-tape)',
+    '![license](https://img.shields.io/npm/l/task-tape.svg)',
     'license'
   )
 
   t.equal(
     create('node', info).link,
-    '[![node](https://img.shields.io/node/v/task-tape.svg)](https://www.npmjs.org/package/task-tape)',
+    '![node](https://img.shields.io/node/v/task-tape.svg)',
     'node'
   )
 

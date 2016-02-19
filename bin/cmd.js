@@ -1,115 +1,87 @@
 #!/usr/bin/env node
 
-var minimist = require('minimist')
+var Command = require('commander').Command
+
+var program = new Command('mybadges')
+
+program
+  .version(require('../package.json').version)
+  .option('-c, --coverage', 'coverage')
+  .option('-d, --dependencies', 'dependencies')
+  .option('-D, --dev', 'devDependencies')
+  .option('-v, --pkg-version', 'package version')
+  .option('-s, --status', 'travis build status')
+  .option('--downloads', 'downloads from npm')
+  .option('--npm', 'info on npm')
+  .option('--licence', 'license')
+  .option('--node', 'engines: node version support')
+  .option('--user <string>', 'GitHub username')
+  .option('--repo <string>', 'GitHub repository')
+  .option('--minor', '-vs')
+  .option('--major', '-vscdD --node')
+  .parse(process.argv)
+
 var create = require('..')
-var fs = require('fs')
 var resolve = require('resolve')
 
 var options = [
-  'npm',
   'version',
   'status',
   'coverage',
   'dependencies',
   'devDependencies',
+  'node',
   'downloads',
   'license',
-  'node',
+  'npm',
 ]
 
-var portfolio = {
-  major: ['npm', 'version', 'status', 'coverage', 'dependencies', 'devDependencies'],
-  full: options,
-  minor: ['npm', 'version', 'status'],
-}
-var argv = minimist(process.argv.slice(2), {
-  boolean: ['help'].concat(options, Object.keys(portfolio)),
-  string: ['user', 'repo'],
-  alias: {
-    c: 'coverage',
-    d: 'dependencies',
-    D: 'devDependencies',
-    s: 'status',
-    o: 'downloads',
-    p: 'npm',
-    l: 'license',
-    n: 'node',
-    v: 'version',
+var major = ['version', 'status', 'coverage', 'dependencies', 'devDependencies', 'node']
+var minor = ['version', 'status']
 
-    U: 'user',
-    R: 'repo',
-    h: 'help',
-  },
-})
-
-;(function () {
-  if (argv.help) {
-    fs.createReadStream(__dirname + '/help.txt')
-      .pipe(process.stdout)
-      .on('close', function () {
-        process.exit(1)
-      })
-    return
-  }
-
-  if (argv.major) {
-    portfolio.major.forEach(function (i) {
-      argv[i] = true
-    })
-  } else if (argv.minor) {
-    portfolio.minor.forEach(function (i) {
-      argv[i] = true
-    })
-  } else if (argv.full) {
-    portfolio.full.forEach(function (i) {
-      argv[i] = true
-    })
-  }
-
-  var info = {
-    name: argv._[0],
-    user: argv.user,
-    repo: argv.repo,
-  }
-
-  resolve('./package.json', {
-    basedir: process.cwd(),
-    pathFilter: function () {
-      return 'package.json'
-    },
-  }, function (err, file, pkg) {
-    var url = pkg && pkg.repository && pkg.repository.url
-    if (url) {
-      var parts = url.split('/').slice(-2)
-      info.user = info.user || parts[0]
-      info.repo = info.repo || parts[1].slice(0, -4)
-      info.name = info.name || pkg.name
+var badges = []
+if (program.major) {
+  badges = major
+} else if (program.minor) {
+  badges = minor
+} else {
+  options.forEach(function (b) {
+    if (program[b]) {
+      badges.push(b)
     }
-
-    if (!info.repo) {
-      info.repo = info.name
-    }
-
-    if (!info.name) {
-      info.name = info.repo
-    }
-
-    options.forEach(function (opt) {
-      if (argv[opt]) {
-        var o = create(opt, info)
-        if (o) {
-          return console.log(o.link)
-        }
-        if (options.indexOf(opt) === -1) {
-          return console.warn('WARN: `' + opt + '`not supported yet')
-        }
-        console.warn('Cannot create badge for `' + opt + '`')
-        console.warn('Please make sure you are running the command where package.json lies, or user name, repo name, package name are provided properly in the command line')
-      }
-    })
-
   })
+}
 
-})()
+var info = {
+  name: program.args[0],
+  user: program.user,
+  repo: program.repo,
+}
 
+resolve('./package.json', {
+  basedir: process.cwd(),
+  pathFilter: function () {
+    return 'package.json'
+  },
+}, function (err, file, pkg) {
+  var url = pkg && pkg.repository && pkg.repository.url
+  if (url) {
+    var parts = url.split('/').slice(-2)
+    info.user = info.user || parts[0]
+    info.repo = info.repo || parts[1].slice(0, -4)
+    info.name = info.name || pkg.name
+  }
+
+  if (!info.repo) {
+    info.repo = info.name
+  }
+
+  if (!info.name) {
+    info.name = info.repo
+  }
+
+  badges.forEach(function (name) {
+    console.log(create(name, info).link)
+  })
+})
 

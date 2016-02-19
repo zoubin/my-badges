@@ -7,7 +7,10 @@
     "mybadges": "./bin/cmd.js"
   },
   "scripts": {
-    "test": "eslint . && tap test/*.js"
+    "test": "npm run lint && tap test/*.js",
+    "cov": "tap --cov test/*.js",
+    "lint": "eslint *.js 'lib/**/*.js' test/*.js bin/*.js",
+    "coveralls": "COVERALLS_REPO_TOKEN=REPO_TOKEN npm run cov"
   },
   "repository": {
     "type": "git",
@@ -26,12 +29,12 @@
   },
   "homepage": "https://github.com/zoubin/my-badges#readme",
   "dependencies": {
-    "minimist": "^1.2.0",
+    "commander": "^2.9.0",
     "resolve": "^1.1.6",
     "util-mix": "^3.0.2"
   },
   "devDependencies": {
-    "eslint": "^1.6.0",
-    "tap": "^2.1.0"
+    "eslint": "^2.1.0",
+    "tap": "^5.0.0"
   }
 }
