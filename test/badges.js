@@ -45,7 +45,7 @@ test('badges', function(t) {
   )
 
   t.equal(
-    create('version', info).link,
+    create('vers', info).link,
     '[![version](https://img.shields.io/npm/v/task-tape.svg)](https://www.npmjs.org/package/task-tape)',
     'version'
   )

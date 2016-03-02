@@ -9,11 +9,12 @@ program
   .option('-c, --coverage', 'coverage')
   .option('-d, --dependencies', 'dependencies')
   .option('-D, --dev', 'devDependencies')
-  .option('-v, --pkg-version', 'package version')
+  .option('-v, --vers', 'package version')
   .option('-s, --status', 'travis build status')
   .option('--downloads', 'downloads from npm')
   .option('--npm', 'info on npm')
   .option('--licence', 'license')
+  .option('--license', 'license')
   .option('--node', 'engines: node version support')
   .option('--user <string>', 'GitHub username')
   .option('--repo <string>', 'GitHub repository')
@@ -25,7 +26,7 @@ var create = require('..')
 var resolve = require('resolve')
 
 var options = [
-  'version',
+  'vers',
   'status',
   'coverage',
   'dependencies',
@@ -33,11 +34,12 @@ var options = [
   'node',
   'downloads',
   'license',
+  'licence',
   'npm',
 ]
 
-var major = ['version', 'status', 'coverage', 'dependencies', 'devDependencies', 'node']
-var minor = ['version', 'status']
+var major = ['vers', 'status', 'coverage', 'dependencies', 'devDependencies', 'node']
+var minor = ['vers', 'status']
 
 var badges = []
 if (program.major) {
