@@ -2,7 +2,7 @@
 [![version](https://img.shields.io/npm/v/my-badges.svg)](https://www.npmjs.org/package/my-badges)
 [![status](https://travis-ci.org/zoubin/my-badges.svg)](https://travis-ci.org/zoubin/my-badges)
 [![dependencies](https://david-dm.org/zoubin/my-badges.svg)](https://david-dm.org/zoubin/my-badges)
-[![devDependencies](https://david-dm.org/zoubin/my-badges/dev-status.svg)](https://david-dm.org/zoubin/my-badges#info=devDependencies)
+[![devDependencies](https://david-dm.org/zoubin/my-badges/dev-status.svg)](https://david-dm.org/zoubin/my-badges?type=dev)
 
 Generate useful badges
 
@@ -26,7 +26,7 @@ Output:
 [![status](https://travis-ci.org/reducejs/common-bundle.svg)](https://travis-ci.org/reducejs/common-bundle)
 [![coverage](https://img.shields.io/coveralls/reducejs/common-bundle.svg)](https://coveralls.io/github/reducejs/common-bundle)
 [![dependencies](https://david-dm.org/reducejs/common-bundle.svg)](https://david-dm.org/reducejs/common-bundle)
-[![devDependencies](https://david-dm.org/reducejs/common-bundle/dev-status.svg)](https://david-dm.org/reducejs/common-bundle#info=devDependencies)
+[![devDependencies](https://david-dm.org/reducejs/common-bundle/dev-status.svg)](https://david-dm.org/reducejs/common-bundle?type=dev)
 ![node](https://img.shields.io/node/v/common-bundle.svg)
 
 ```
@@ -35,7 +35,7 @@ Output:
 [![status](https://travis-ci.org/reducejs/common-bundle.svg)](https://travis-ci.org/reducejs/common-bundle)
 [![coverage](https://img.shields.io/coveralls/reducejs/common-bundle.svg)](https://coveralls.io/github/reducejs/common-bundle)
 [![dependencies](https://david-dm.org/reducejs/common-bundle.svg)](https://david-dm.org/reducejs/common-bundle)
-[![devDependencies](https://david-dm.org/reducejs/common-bundle/dev-status.svg)](https://david-dm.org/reducejs/common-bundle#info=devDependencies)
+[![devDependencies](https://david-dm.org/reducejs/common-bundle/dev-status.svg)](https://david-dm.org/reducejs/common-bundle?type=dev)
 ![node](https://img.shields.io/node/v/common-bundle.svg)
 
 ```bash
@@ -73,4 +73,3 @@ activate your repo,
 and push a `.coveralls.yml`
 
 * https://coveralls.zendesk.com/hc/en-us
-
