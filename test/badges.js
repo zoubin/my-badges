@@ -28,7 +28,7 @@ test('badges', function(t) {
 
   t.equal(
     create('devDependencies', info).link,
-    '[![devDependencies](https://david-dm.org/zoubin/task-tape/dev-status.svg)](https://david-dm.org/zoubin/task-tape#info=devDependencies)',
+    '[![devDependencies](https://david-dm.org/zoubin/task-tape/dev-status.svg)](https://david-dm.org/zoubin/task-tape?type=dev)',
     'devDependencies'
   )
 
@@ -64,4 +64,3 @@ test('badges', function(t) {
 
   t.end()
 })
-
