@@ -30,11 +30,11 @@
   "homepage": "https://github.com/zoubin/my-badges#readme",
   "dependencies": {
     "commander": "^2.9.0",
-    "resolve": "^1.1.6",
+    "resolve": "^1.2.0",
     "util-mix": "^3.0.2"
   },
   "devDependencies": {
-    "eslint": "^2.1.0",
-    "tap": "^5.0.0"
+    "eslint": "^3.12.2",
+    "tap": "^8.0.1"
   }
 }
